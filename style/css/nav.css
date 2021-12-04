@@ -1,12 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
-/*
-Regular 400
-Medium 500
-Semi bold 600
-Bold 700
-Extra bold 800
-Black 900
-*/
 * {
   font-family: 'Montserrat', sans-serif;
   -webkit-box-sizing: border-box;
@@ -16,10 +8,10 @@ Black 900
 }
 
 nav#main-nav {
+  height: 62px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 62px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -32,23 +24,22 @@ nav#main-nav ul {
       -ms-user-select: none;
           user-select: none;
   list-style: none;
-  float: right;
 }
 
-nav#main-nav ul li.nav-item {
+nav#main-nav ul li.main-nav-item {
   display: inline;
 }
 
-nav#main-nav ul li.nav-item a {
+nav#main-nav ul li.main-nav-item a {
   color: black;
-  opacity: .5;
   font-size: 18px;
   font-weight: 600;
   line-height: 22px;
+  opacity: .5;
   text-decoration: none;
 }
 
-nav#main-nav ul li.nav-item:hover a {
+nav#main-nav ul li.main-nav-item:hover a {
   opacity: 1;
 }
 
@@ -66,4 +57,42 @@ nav#main-nav ul#account-links {
 
 nav#main-nav ul#account-links li {
   margin-left: 40px;
+}
+
+nav#sub-nav {
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 50px;
+  padding: 0px 10px;
+}
+
+nav#sub-nav ul#event-category {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  list-style: none;
+}
+
+nav#sub-nav ul#event-category li.sub-nav-item {
+  margin-right: 25px;
+  display: inline;
+}
+
+nav#sub-nav ul#event-category li.sub-nav-item a {
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  opacity: .5;
+  text-decoration: none;
+}
+
+nav#sub-nav ul#event-category li.sub-nav-item:active a {
+  opacity: 1;
 }

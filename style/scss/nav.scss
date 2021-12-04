@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 $montserrat: 'Montserrat', sans-serif;
-/*
-Regular 400
-Medium 500
-Semi bold 600
-Bold 700
-Extra bold 800
-Black 900
-*/
+// R-400 | M-500 | SB-600 | B-700 | EB-800 | BLACK-900
+
+
+@mixin font($color, $size, $weight, $height) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+}
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -17,45 +18,86 @@ Black 900
     padding: 0;
 }
 
+//710 width - breaking point for responsiveness
 nav#main-nav {
-    display: flex;
     height: 62px;
+    display: flex;
     justify-content: space-between;
     padding: 20px 0px 20px 0px;
     ul {
         user-select: none;
         list-style: none;
-        float: right;
-        li.nav-item {
+        li.main-nav-item {
             display: inline;
             a {
-                color: black;
+                @include font(black, 18px, 600, 22px);
                 opacity: .5;
-                font-size: 18px;
-                font-weight: 600;
-                line-height: 22px; 
                 text-decoration: none;
             }
+            &:hover {
+                a {
+                    opacity: 1;
+                }
+            }
         }
-        li.nav-item:hover {
-            a {
-                opacity: 1;
+
+        &#event-links {
+            margin-left: 30px;
+            li {
+                margin-right: 40px;
+            }
+        }
+
+        &#account-links {
+            margin-right: 30px;
+            li {
+                margin-left: 40px;
             }
         }
     }
+}
 
-    ul#event-links {
-        margin-left: 30px;
-        li {
-            margin-right: 40px;
+
+nav#sub-nav {
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 0px 10px;
+    ul#event-category {
+        user-select: none;
+        list-style: none;
+        li.sub-nav-item {
+            margin-right: 25px;
+            display: inline;
+            a {
+                @include font(black, 16px, 700, 20px);
+                opacity: .5;
+                text-decoration: none;
+            }
+            &:active {
+                a {
+                    opacity: 1;
+                }
+            }
         }
     }
+    // ul#sort-dropdown {
+    //     user-select: none;
+    //     list-style: none;
+    //     li#label {
+    //         display: inline;
+    //         @include font(black, 16px, 500, 20px)
+    //     }
 
-    ul#account-links {
-        margin-right: 30px;
-        li {
-            margin-left: 40px;
-        }
-    }
-
+    //     li#dropdown {
+    //         display: inline;
+    //         button {
+    //             background-color: transparent;
+    //             border: none;
+    //             @include font(black, 16px, 700, 20px);
+    //             cursor: pointer;
+    //         }
+    //     }
+    // }
 }
