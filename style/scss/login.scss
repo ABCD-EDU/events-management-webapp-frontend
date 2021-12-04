@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 $accent-color: #EAAA1D;
-/*
-Regular 400
-Medium 500
-Semi bold 600
-Bold 700
-Extra bold 800
-Black 900
-*/
+// R-400 | M-500 | SB-600 | B-700 | EB-800 | BLACK-900
 
+@mixin font($color, $size, $weight, $height) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+}
 
 * {
     font-family:'Montserrat', sans-serif;
@@ -24,68 +23,50 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 100px;
+    padding-bottom: 5%;
     section {
-        
         h1#title {
             text-align: center;
-            margin: 0 auto;
-            color: black;
-            font-size: 50px;
-            font-weight: 700;
-            line-height: 61px;   
+            @include font(black, 50px, 700, 61px);  
         }
-        form {
+        form#login {
             display: grid;
             justify-content: center;
-
-            #user-label, #pass-label {
-                margin-top: 20px;
-                color: black;
-                font-size: 18px;
-                font-weight: 600;
-                line-height: 22px;  
-            }
-            
-            #user-label {
+            #user-label{
                 margin-top: 40px;
+                @include font(black, 18px, 600, 22px);
+            }
+            #pass-label {
+                margin-top: 20px;
+                @include font(black, 18px, 600, 22px);
             }
             
             #user-field, #pass-field {
                 margin-top: 10px;
                 width: 408px;
                 height: 44px;
-                border: 2px solid;
-                border-color: black;
-                color: black;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 20px;
+                border: 2px solid black;
+                @include font(black, 16px, 400, 20px);
                 text-indent: 10px;
+                user-select: none;
+                &:focus {
+                    border-color: $accent-color;
+                    outline: none;
+                }
             }
-            
-            #user-field:focus, #pass-field:focus {
-                border-color: $accent-color;
-                outline: none;
-            }
-            
+
             #submit-button {
                 margin-top: 40px;
                 width: 408px;
                 height: 44px;
                 background-color: black;
-                border: 2px solid;
-                border-color: black;
-                color: white;
-                font-size: 16px;
-                font-weight: 700;
-                line-height: 20px;  
+                border: 2px solid black;
+                @include font(white, 16px, 700, 20px);
                 cursor: pointer;
-            }
-            
-            #submit-button:active {
-                background-color: white;
-                color: black;
+                &:active {
+                    background-color: white;
+                    color: black;
+                }
             }
         }
     }
