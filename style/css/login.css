@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+/*
+Regular 400
+Medium 500
+Semi bold 600
+Bold 700
+Extra bold 800
+Black 900
+*/
+* {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+  height: 100vh;
+}
+
+body section h1#title {
+  text-align: center;
+  margin: 0 auto;
+  color: black;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 61px;
+}
+
+body section form {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body section form #user-label, body section form #pass-label {
+  margin-top: 20px;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+body section form #user-label {
+  margin-top: 40px;
+}
+
+body section form #user-field, body section form #pass-field {
+  margin-top: 10px;
+  width: 408px;
+  height: 44px;
+  border: 2px solid;
+  border-color: black;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-indent: 10px;
+}
+
+body section form #user-field:focus, body section form #pass-field:focus {
+  border-color: blue;
+  outline: none;
+}
+
+body section form #submit-button {
+  margin-top: 40px;
+  width: 408px;
+  height: 44px;
+  background-color: black;
+  border: 2px solid;
+  border-color: black;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+body section form #submit-button:active {
+  background-color: white;
+  color: black;
+}
