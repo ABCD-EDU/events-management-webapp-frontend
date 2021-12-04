@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-$montserrat: 'Montserrat', sans-serif;
+$accent-color: #EAAA1D;
 /*
 Regular 400
 Medium 500
@@ -11,7 +11,7 @@ Black 900
 
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family:'Montserrat', sans-serif;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
@@ -21,6 +21,10 @@ Black 900
 body {
     background-color: white;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
     section {
         
         h1#title {
@@ -61,7 +65,7 @@ body {
             }
             
             #user-field:focus, #pass-field:focus {
-                border-color: blue;
+                border-color: $accent-color;
                 outline: none;
             }
             

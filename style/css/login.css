@@ -18,6 +18,16 @@ Black 900
 body {
   background-color: white;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 100px;
 }
 
 body section h1#title {
@@ -63,7 +73,7 @@ body section form #user-field, body section form #pass-field {
 }
 
 body section form #user-field:focus, body section form #pass-field:focus {
-  border-color: blue;
+  border-color: #EAAA1D;
   outline: none;
 }
 
