@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/css/editCreateEvents.css">
+    <link rel="stylesheet" href="/style/css/nav.css">
+    <title>Page Title</title>
+</head>
+<body>
+    <header>
+        <nav id="main-nav">
+            <ul id="event-links">
+                <li class="main-nav-item"><a href="">My Events</a></li>
+                <li class="main-nav-item"><a href="">Upcoming Events</a></li>
+            </ul>
+            <ul id="account-links">
+                <li class="main-nav-item"><a href="">Create an Event</a></li>
+                <li class="main-nav-item"><a href="">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="page-title">Page Title</div>
+
+    <section>
+        <form action="" id="create-edit-events">
+            <div id="name-block">
+                <label for="event-name">Event Name</label>
+                <input type="text" id="name-field" name="event-name" placeholder="Event Name" required>
+            </div>
+            <div id="location-block">
+                <label for="location">Location</label>
+                <input type="text" id="location-field" name="location" placeholder="Location" required>
+            </div>
+            <div id="status-block">
+                <label for="status">Status</label>
+                <select name="status-field" id="status-option" class="dropdown">
+                    <option value="0">Active</option>
+                    <option value="1">Finished</option>
+                    <option value="2">Cancelled</option>
+                </select>
+            </div>
+            <div id="date-block">
+                <label for="date">Date</label>
+                <input type="date" id="date-field" name="date" placeholder="Date" required>
+            </div>
+            <div id="time-block">
+                <label for="time">Time</label>
+                <input type="time" id="time-field" name="time" placeholder="Time" required>
+            </div>
+            <div id="category-block">
+                <label for="category">Event Category</label>
+                <select name="category-field" id="category-option" class="dropdown">
+                    <option value="0">All</option>
+                    <option value="1">Demonstrations</option>
+                    <option value="2">Seminars</option>
+                    <option value="3">Meetups</option>
+                    <option value="4">Talks</option>
+                    <option value="5">Others</option>
+                </select>
+            </div>
+            <div id="description-block">
+                <label for="Description">Description</label>
+                <textarea id="desc-field" name="Description" placeholder="Description" required></textarea>
+            </div>
+
+            <div id="submit-block">
+                <input type="submit" value="SUBMIT EVENT" id="submit-button">
+            </div>
+            <div id="discard-block">
+                <input type="submit" value="discard changes" id="discard-button">
+            </div>
+            <!-- <div id="delete-block">
+                <input type="submit" value="DELETE EVENT" id="delete-button">
+            </div>
+            <div id="save-block">
+                <input type="submit" value="SAVE CHANGES" id="save-button">
+            </div> -->
+        </form>
+    </section>
+</body>
+</html>

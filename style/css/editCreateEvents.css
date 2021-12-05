@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+* {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+}
+
+body div#page-title {
+  height: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: black;
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 61px;
+}
+
+body section {
+  margin: 50px 0px 100px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body section form#create-edit-events {
+  width: 886px;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 30px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 4fr .5fr .1fr;
+      grid-template-rows: 1fr 1fr 1fr 4fr .5fr .1fr;
+      grid-template-areas: "name name name" "location location status" "date time category" "description description description" "submit submit submit" "discard discard discard";
+}
+
+body section form#create-edit-events div {
+  display: -ms-grid;
+  display: grid;
+}
+
+body section form#create-edit-events label {
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+body section form#create-edit-events input, body section form#create-edit-events textarea, body section form#create-edit-events select {
+  margin-top: 10px;
+  height: 50px;
+  border: 2px solid black;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-indent: 15px;
+}
+
+body section form#create-edit-events input#desc-field, body section form#create-edit-events textarea#desc-field, body section form#create-edit-events select#desc-field {
+  padding: 15px;
+  height: 300px;
+  resize: none;
+  text-indent: 0;
+}
+
+body section form#create-edit-events input.dropdown, body section form#create-edit-events textarea.dropdown, body section form#create-edit-events select.dropdown {
+  background-color: white;
+  text-indent: 4px;
+}
+
+body section form#create-edit-events input.dropdown option, body section form#create-edit-events textarea.dropdown option, body section form#create-edit-events select.dropdown option {
+  background-color: white;
+}
+
+body section form#create-edit-events input:focus, body section form#create-edit-events textarea:focus, body section form#create-edit-events select:focus {
+  border-color: #EAAA1D;
+  outline: none;
+}
+
+body section form#create-edit-events #submit-button {
+  margin: 0;
+  height: 50px;
+  width: 238px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-indent: 0px;
+  cursor: pointer;
+}
+
+body section form#create-edit-events #submit-button:active {
+  border: 2px solid black;
+  background-color: #DDDDDD;
+  color: black;
+}
+
+body section form#create-edit-events #discard-button {
+  margin: 0;
+  height: auto;
+  width: auto;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  text-indent: 0;
+  cursor: pointer;
+}
+
+body section form#create-edit-events #discard-button:active {
+  opacity: .5;
+}
+
+body section form#create-edit-events #name-block {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: name;
+}
+
+body section form#create-edit-events #location-block {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: location;
+}
+
+body section form#create-edit-events #status-block {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: status;
+}
+
+body section form#create-edit-events #date-block {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: date;
+}
+
+body section form#create-edit-events #time-block {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: time;
+}
+
+body section form#create-edit-events #category-block {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: category;
+}
+
+body section form#create-edit-events #description-block {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: description;
+}
+
+body section form#create-edit-events #submit-block {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: submit;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body section form#create-edit-events #discard-block {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: discard;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
