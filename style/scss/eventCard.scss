@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+$accent-color: #EAAA1D;
+// R-400 | M-500 | SB-600 | B-700 | EB-800 | BLACK-900
+
+
+@mixin font($color, $size, $weight, $height) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    section#card {
+        padding: 50px 60px;
+        max-width: 1144px;
+        background-color: white;
+        border: black 2px solid;
+        div#info {
+            h2 {
+                @include font(black, 26px, 700, 32px);
+                margin-bottom: 10px;
+            }
+            h3 {
+                @include font(black, 18px, 600, 22px);
+                margin-bottom: 10px;
+                &#time {
+                    margin-bottom: 30px;
+                }
+            }
+            p {
+                @include font(black, 18px, 400, 25px);
+                margin-bottom: 40px;
+            }
+        }
+
+        div#footer {
+            display: flex;
+            justify-content: space-between;
+            div#buttons {
+                display: flex;
+                column-gap: 20px;
+                button {
+                    @include font(black, 18px, 700, 22px);
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    &:active {
+                        color: #DDDDDD;
+                    }
+                }
+            }
+        }
+    }
+}
