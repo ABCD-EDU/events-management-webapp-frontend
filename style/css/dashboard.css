@@ -1,26 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  width: 100vw;
 }
 
 body {
   background-color: white;
 }
-
 body div#page-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-color: black;
   height: 180px;
   width: auto;
@@ -29,22 +23,15 @@ body div#page-title {
   font-weight: 700;
   line-height: 61px;
 }
-
 body section {
   margin: 30px 0px 100px 0px;
-  display: -ms-grid;
   display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 body section div#search-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
+  justify-content: center;
 }
-
 body section div#search-bar input#search-field {
   height: 50px;
   width: 1034px;
@@ -56,12 +43,10 @@ body section div#search-bar input#search-field {
   line-height: 22px;
   text-indent: 20px;
 }
-
 body section div#search-bar input#search-field:focus {
   border-color: #EAAA1D;
   outline: none;
 }
-
 body section div#search-bar button#search-button {
   height: 50px;
   width: 110px;
@@ -73,14 +58,83 @@ body section div#search-bar button#search-button {
   line-height: 22px;
   cursor: pointer;
 }
-
 body section div#search-bar button#search-button:active {
   background-color: #DDDDDD;
   color: black;
 }
-
 body section hr#divider {
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 1141px;
+  margin: auto;
   border: 2px solid black;
   border-top: transparent;
 }
+
+@media only screen and (max-width: 1200px) {
+  body {
+    background-color: lightblue;
+  }
+  body div#page-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 15vw;
+    width: 100vw;
+    color: white;
+    font-size: 4vw;
+    font-weight: 700;
+    line-height: 61px;
+  }
+  body section {
+    margin: 30px 0px 100px 0px;
+    display: grid;
+    justify-content: center;
+  }
+  body section div#search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 0 2% 0 0;
+  }
+  body section div#search-bar input#search-field {
+    height: 50px;
+    width: 86%;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    text-indent: 20px;
+  }
+  body section div#search-bar input#search-field:focus {
+    border-color: #EAAA1D;
+    outline: none;
+  }
+  body section div#search-bar button#search-button {
+    height: 50px;
+    width: 9%;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 1.56vw;
+    font-weight: 600;
+    line-height: 22px;
+    cursor: pointer;
+  }
+  body section div#search-bar button#search-button:active {
+    background-color: #DDDDDD;
+    color: black;
+  }
+  body section hr#divider {
+    display: flex;
+    justify-content: center;
+    width: 94.7%;
+    margin: auto;
+    border: 2px solid black;
+    border-top: transparent;
+  }
+}
+
+/*# sourceMappingURL=dashboard.css.map */

@@ -18,55 +18,89 @@ $montserrat: 'Montserrat', sans-serif;
     padding: 0;
 }
 
+
 //710 width - breaking point for responsiveness
-nav#main-nav {
-    height: 62px;
+#main-nav {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 20px 0px 20px 0px;
-    ul {
+    width: 100%;
+    // background-color: green;
+    padding: 20px 1vw;
+    // height: 65px;
+    height: 4.88vw;
+
+    #event-links, #account-links {
+        display: flex;
+        justify-content: space-between;
+        // background-color: lightblue;
+        width: 29vw;
         user-select: none;
         list-style: none;
-        li.main-nav-item {
-            display: inline;
+        resize: none;
+
+    }
+
+    .main-nav-item {
+
+        a {
+            @include font(black, 1.5vw, 600, 22px);
+            opacity: .5; //.5
+            text-decoration: none;
+        }
+        &:hover {
             a {
-                @include font(black, 18px, 600, 22px);
-                opacity: .5;
-                text-decoration: none;
-            }
-            &:hover {
-                a {
-                    opacity: 1;
-                }
-            }
-        }
-
-        &#event-links {
-            margin-left: 30px;
-            li {
-                margin-right: 40px;
-            }
-        }
-
-        &#account-links {
-            margin-right: 30px;
-            li {
-                margin-left: 40px;
+                opacity: 1;
             }
         }
     }
+    .nav-item-1 {
+        width: 120px;
+        // background-color: red;
+    }
+    .nav-item-2 {
+        width: 210px;
+        background-color: orange;
+        text-align: center;
+    }
+    .nav-item-3 {
+        width: 175px;
+        background-color: yellow;
+        text-align: center;
+    }
+    .nav-item-4 {
+        width: 90px;
+        // background-color: brown;
+        text-align: right;
+        padding-right: 8px;
+    }
+    #mobile-menu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        right: 0;
+        height: 30vw;
+        width: 20vw;
+        background-color: lightgreen;
+        color: black;
+        z-index: 999;
+    }
 }
-
-
 nav#sub-nav {
     height: 20px;
     display: flex;
     justify-content: space-between;
+    // padding: 0px 0 0 110px;
+    margin: auto;
+    width: 1125px;
     margin-top: 50px;
-    padding: 0px 10px;
+
+    // background-color: green;
     ul#event-category {
         user-select: none;
         list-style: none;
+        margin: auto;
+        background-color: green;
         li.sub-nav-item {
             margin-right: 25px;
             display: inline;
@@ -82,6 +116,11 @@ nav#sub-nav {
             }
         }
     }
+
+    
+
+
+
     // ul#sort-dropdown {
     //     user-select: none;
     //     list-style: none;
@@ -100,4 +139,18 @@ nav#sub-nav {
     //         }
     //     }
     // }
+}
+
+@media only screen and (max-width: 1200px){
+    nav#sub-nav {
+       width: 93vw;
+    }
+}
+
+@media only screen and (max-width: 690px){
+    body{
+        background-color: orange;
+    }
+    
+
 }

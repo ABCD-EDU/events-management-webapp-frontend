@@ -21,9 +21,12 @@ $accent-color: #EAAA1D;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    width: 100vw;
+
 }
 
 body {
+
     background-color: white;
     div#page-title {
         display: flex;
@@ -40,6 +43,7 @@ body {
         justify-content: center;
         div#search-bar {
             display: flex;
+            justify-content: center;
             input#search-field {
                 @include dimension(50px, 1034px);
                 background-color: white;
@@ -63,10 +67,76 @@ body {
                 }
             }
         }
+        // .divider-container{
         hr#divider {
-            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            width: 1141px;
+            margin: auto;
+            // @include dimension(50px, 1034px);
+            // margin: 10px 1vw 0 8.5vw;
             border: 2px solid black;
             border-top: transparent;
+        }
+        // }
+        
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    body {
+        background-color: lightblue;
+
+        // background-color: white;
+        div#page-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            @include dimension(15vw, 100vw);
+            @include font(white, 4vw, 700, 61px);
+        }
+        section {
+            margin: 30px 0px 100px 0px;
+            display: grid;
+            justify-content: center;
+            div#search-bar {
+                display: flex;
+                justify-content: center;
+                margin: 0 2% 0 0;
+                input#search-field {
+                    @include dimension(50px, 86%);
+                    background-color: white;
+                    border: 2px solid black;
+                    @include font(black, 18px, 400, 22px);
+                    text-indent: 20px;
+                    &:focus {
+                        border-color: $accent-color;
+                        outline: none;
+                    }
+                }
+                button#search-button {
+                    @include dimension(50px,9%);
+                    background-color: black;
+                    border: none;
+                    @include font(white, 1.56vw, 600, 22px);
+                    cursor: pointer;
+                    &:active {
+                        background-color: #DDDDDD;
+                        color: black;
+                    }
+                }
+            }
+            hr#divider {
+                display: flex;
+                justify-content: center;
+                width: 94.7%;
+                margin: auto;
+                // @include dimension(50px, 1034px);
+                // margin: 10px 1vw 0 8.5vw;
+                border: 2px solid black;
+                border-top: transparent;
+            }
         }
     }
 }

@@ -11,15 +11,27 @@
 <body>
     <header>
         <nav id="main-nav">
-            <ul id="event-links">
-                <li class="main-nav-item"><a href="">My Events</a></li>
-                <li class="main-nav-item"><a href="">Upcoming Events</a></li>
-            </ul>
-            <ul id="account-links">
-                <li class="main-nav-item"><a href="">Create an Event</a></li>
-                <li class="main-nav-item"><a href="">Logout</a></li>
-            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar">My Events</span>
+                <span class="bar">Upcoming Events</span>
+                <span class="bar">Create Event</span>
+                <span class="bar">Logout</span>
+
+            </div>
+            <!-- <div class="event-links-container"> -->
+                <ul id="event-links">
+                    <li class="main-nav-item nav-item-1"><a href="">My Events</a></li>
+                    <li class="main-nav-item nav-item-2"><a href="">Upcoming Events</a></li>
+                </ul>
+            <!-- </div> -->
+            <!-- <div class="account-links-container"> -->
+                <ul id="account-links">
+                    <li class="main-nav-item nav-item-3"><a href="">Create an Event</a></li>
+                    <li class="main-nav-item nav-item-4"><a href="">Logout</a></li>
+                </ul>
+            <!-- </div> -->
         </nav>
+
     </header>
 
     <div id="page-title">Page Title</div>
@@ -45,7 +57,9 @@
                 </li>
             </ul> -->
         </nav>
-        <hr id="divider">
+        <!-- <div class="divider-container"> -->
+            <hr id="divider">
+        <!-- </div> -->
         
     </section>
 </body>
