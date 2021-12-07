@@ -6,30 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/css/dashboard.css">
     <link rel="stylesheet" href="/style/css/nav.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>Page Title</title>
 </head>
 <body>
     <header>
+        <img id="burger-icon" src="/res/img/burger-img.png" alt="hamburger icon"/>
         <nav id="main-nav">
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar">My Events</span>
-                <span class="bar">Upcoming Events</span>
-                <span class="bar">Create Event</span>
-                <span class="bar">Logout</span>
-
-            </div>
-            <!-- <div class="event-links-container"> -->
                 <ul id="event-links">
                     <li class="main-nav-item nav-item-1"><a href="">My Events</a></li>
                     <li class="main-nav-item nav-item-2"><a href="">Upcoming Events</a></li>
                 </ul>
-            <!-- </div> -->
-            <!-- <div class="account-links-container"> -->
                 <ul id="account-links">
                     <li class="main-nav-item nav-item-3"><a href="">Create an Event</a></li>
                     <li class="main-nav-item nav-item-4"><a href="">Logout</a></li>
                 </ul>
-            <!-- </div> -->
         </nav>
 
     </header>
@@ -42,14 +33,18 @@
             <button id="search-button">submit</button>
         </div>
         <nav id="sub-nav">
-            <ul id="event-category">
-                <li class="sub-nav-item"><a href="">All</a></li>
-                <li class="sub-nav-item"><a href="">Demonstrations</a></li>
-                <li class="sub-nav-item"><a href="">Seminars</a></li>
-                <li class="sub-nav-item"><a href="">Meet Ups</a></li>
-                <li class="sub-nav-item"><a href="">Talks</a></li>
-                <li class="sub-nav-item"><a href="">Others</a></li>
-            </ul>
+            <li>
+                <div id="category-dropdown"><a href="">Category↓</a></div>
+                <ul id="event-category" class="sub-nav-dropdown">
+                    <li class="sub-nav-item"><a href="">All</a></li>
+                    <li class="sub-nav-item"><a href="">Demonstrations</a></li>
+                    <li class="sub-nav-item"><a href="">Seminars</a></li>
+                    <li class="sub-nav-item"><a href="">Meet Ups</a></li>
+                    <li class="sub-nav-item"><a href="">Talks</a></li>
+                    <li class="sub-nav-item"><a href="">Others</a></li>
+                </ul>
+            </li>
+            
             <!-- <ul id="sort-dropdown">
                 <li id="label">sort by:</li>
                 <li id="dropdown">
@@ -57,10 +52,9 @@
                 </li>
             </ul> -->
         </nav>
-        <!-- <div class="divider-container"> -->
             <hr id="divider">
-        <!-- </div> -->
         
     </section>
+    <script src="/public/"></script>
 </body>
 </html>

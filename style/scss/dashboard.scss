@@ -21,22 +21,22 @@ $accent-color: #EAAA1D;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    width: 100vw;
-
 }
 
 body {
+    background-color: #ffffff;
+    overflow-x: hidden;
+    width: 100vw;
 
-    background-color: white;
     div#page-title {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: black;
+        background-color: #000000;
         @include dimension(180px, auto);
-        @include font(white, 50px, 700, 61px);
+        @include font(#ffffff, 50px, 700, 61px);
     }
-
+    
     section {
         margin: 30px 0px 100px 0px;
         display: grid;
@@ -46,9 +46,9 @@ body {
             justify-content: center;
             input#search-field {
                 @include dimension(50px, 1034px);
-                background-color: white;
-                border: 2px solid black;
-                @include font(black, 18px, 400, 22px);
+                background-color: #ffffff;
+                border: 2px solid #000000;
+                @include font(#000000, 18px, 400, 22px);
                 text-indent: 20px;
                 &:focus {
                     border-color: $accent-color;
@@ -57,86 +57,86 @@ body {
             }
             button#search-button {
                 @include dimension(50px, 110px);
-                background-color: black;
+                background-color: #000000;
                 border: none;
                 @include font(white, 18px, 600, 22px);
                 cursor: pointer;
                 &:active {
                     background-color: #DDDDDD;
-                    color: black;
+                    color: #000000;
                 }
             }
         }
-        // .divider-container{
         hr#divider {
             display: flex;
             justify-content: center;
             width: 1141px;
             margin: auto;
-            // @include dimension(50px, 1034px);
-            // margin: 10px 1vw 0 8.5vw;
             border: 2px solid black;
             border-top: transparent;
         }
-        // }
         
     }
 }
 
 @media only screen and (max-width: 1200px){
     body {
-        background-color: lightblue;
 
-        // background-color: white;
         div#page-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: black;
             @include dimension(15vw, 100vw);
-            @include font(white, 4vw, 700, 61px);
+            @include font(#ffffff, 4vw, 700, 61px);
         }
         section {
-            margin: 30px 0px 100px 0px;
-            display: grid;
-            justify-content: center;
             div#search-bar {
-                display: flex;
-                justify-content: center;
-                margin: 0 2% 0 0;
                 input#search-field {
-                    @include dimension(50px, 86%);
-                    background-color: white;
-                    border: 2px solid black;
-                    @include font(black, 18px, 400, 22px);
-                    text-indent: 20px;
-                    &:focus {
-                        border-color: $accent-color;
-                        outline: none;
-                    }
+                    @include dimension(45px, 80vw);
+                    @include font(#000000, 15px, 400, 22px);
                 }
                 button#search-button {
-                    @include dimension(50px,9%);
-                    background-color: black;
-                    border: none;
-                    @include font(white, 1.56vw, 600, 22px);
-                    cursor: pointer;
-                    &:active {
-                        background-color: #DDDDDD;
-                        color: black;
-                    }
+                    @include dimension(45px, 10vw);
+                    @include font(white, 15px, 600, 22px);
                 }
             }
             hr#divider {
-                display: flex;
-                justify-content: center;
-                width: 94.7%;
-                margin: auto;
-                // @include dimension(50px, 1034px);
-                // margin: 10px 1vw 0 8.5vw;
-                border: 2px solid black;
-                border-top: transparent;
+                width: 90vw;
             }
         }
     }
+}
+
+@media only screen and (max-width: 690px){
+    body{
+        
+        div#page-title {
+            justify-content: left;
+            padding-left: 20px;
+            @include dimension(80px, auto);
+            @include font(white, 25px, 700, 61px);
+        }
+        section {
+            div#search-bar {
+                input#search-field {
+                    @include dimension(40px, 75vw);
+                    @include font(black, 13px, 400, 22px);
+                    text-indent: 20px;
+                }
+                button#search-button {
+                    @include dimension(40px, 15vw);
+                    @include font(white, 2.5vw, 600, 22px);
+                    
+                    &:hover {
+                        box-shadow: 0 0 5px #33ffff,
+                                    0 0 5px #66ffff;
+                    }
+                }
+                
+            }
+           
+        }
+        
+
+       
+    }
+    
+
 }
