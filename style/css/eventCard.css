@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +13,6 @@ body section#card {
   background-color: white;
   border: black 2px solid;
 }
-
 body section#card div#info h2 {
   color: black;
   font-size: 26px;
@@ -21,7 +20,6 @@ body section#card div#info h2 {
   line-height: 32px;
   margin-bottom: 10px;
 }
-
 body section#card div#info h3 {
   color: black;
   font-size: 18px;
@@ -29,11 +27,9 @@ body section#card div#info h3 {
   line-height: 22px;
   margin-bottom: 10px;
 }
-
 body section#card div#info h3#time {
   margin-bottom: 30px;
 }
-
 body section#card div#info p {
   color: black;
   font-size: 18px;
@@ -41,24 +37,14 @@ body section#card div#info p {
   line-height: 25px;
   margin-bottom: 40px;
 }
-
 body section#card div#footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 body section#card div#footer div#buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
+  column-gap: 20px;
 }
-
 body section#card div#footer div#buttons button {
   color: black;
   font-size: 18px;
@@ -68,7 +54,8 @@ body section#card div#footer div#buttons button {
   border: none;
   cursor: pointer;
 }
-
 body section#card div#footer div#buttons button:active {
   color: #DDDDDD;
 }
+
+/*# sourceMappingURL=eventCard.css.map */
