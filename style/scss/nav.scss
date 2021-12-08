@@ -49,23 +49,26 @@ $montserrat: 'Montserrat', sans-serif;
     align-items: center;
     justify-content: space-between;
     padding: 20px 1vw;
-    @include dimension(65px, 100%);
+    @include dimension(42px, 100%);
 
     #event-links, #account-links {
         display: flex;
         justify-content: space-between;
-        width: 29vw;
         resize: none;
-        background-color: none;
+    }
+
+    #event-links {
+        margin: 0 0 0 8px;
+        width: 225px;
     }
 
     #account-links {
-        width: 25vw;
+        width: 205px;
     }
 
     .main-nav-item {
         a {
-            @include font(#000000, 22px, 600, 22px);
+            @include font(#000000, 13px, 600, 22px);
             opacity: .5;
         }
         &:hover {
@@ -99,7 +102,7 @@ nav#sub-nav {
     flex-direction: column;
     margin: auto;
     margin-top: 50px;
-    @include dimension(20px, 1125px);
+    height: 20px;
 
     #category-dropdown {
         width: 154px;
@@ -112,13 +115,15 @@ nav#sub-nav {
     }
 
     ul#event-category {
-        margin: auto;
-        margin-top: -20px;
+        margin: -35px 0 0 0;
+        padding: 0 0 0 4px;
+        width: 810px;
         li.sub-nav-item {
-            margin: 0 25px 0 0;
+            margin: 0 16px 0 0;
             display: inline;
+
             a {
-                @include font(#000000, 16px, 700, 20px);
+                @include font(#000000, 11px, 700, 20px);
                 opacity: .5;
                 text-decoration: none;
             }
@@ -151,20 +156,11 @@ nav#sub-nav {
     // }
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 860px){
     #main-nav {
-        #event-links, #account-links {
-            width: 300px;
-        }
-    
-        #account-links {
-            width: 280px;
-            
-        }
-    
         .main-nav-item {
             a {
-                @include font(#000000, 19px, 600, 22px);
+                @include font(#000000, 13px, 600, 22px);
                 opacity: .5; 
             }
             &:hover {
@@ -178,18 +174,17 @@ nav#sub-nav {
     
     nav#sub-nav {
        width: 93vw;
-       padding: 0 0 0 18px;
+
        ul#event-category {
-            li.sub-nav-item {
-                margin: 0 1vw 0 0;
-            }
-        }
+           width: auto;
+       }
+
     }
 }
 
-@media only screen and (max-width: 690px){
+@media only screen and (max-width: 650px){
     body{
-        width: 101vw;
+        width: 100vw;
         #burger-icon {
             visibility: visible;
         }
@@ -213,12 +208,15 @@ nav#sub-nav {
                 display: flex;
                 flex-direction: column;
                 top: -40px;
+                margin: 0 0 0 1px;
                 @include dimension(50px, 200px);
                 &:hover {
                     visibility: visible;
                 }
             }
-            
+            #event-links {
+            }
+
             .main-nav-item {
                 width: 200px;
                 text-align: left;
@@ -242,9 +240,9 @@ nav#sub-nav {
         
         nav#sub-nav {
             position: relative;
-            margin: 20px 0 0 20px;
+            margin: 20px auto 0 auto;
             left: 0;
-
+            width: 80vw;
             #category-dropdown {
                 visibility: visible;
                 height: 20px;
@@ -255,7 +253,7 @@ nav#sub-nav {
                 }
 
                 a {
-                    font-size: 2.5vw;
+                    font-size: 2vw;
                     letter-spacing: 2px;
                     font-weight: 500;
                 }
@@ -264,7 +262,7 @@ nav#sub-nav {
             
             ul#event-category {
                 position: absolute;
-                top: 39px;
+                top: 54px;
                 background-color: #000000;
                 display: flex;
                 flex-direction: column;
@@ -274,7 +272,8 @@ nav#sub-nav {
                     visibility: visible;
                 }
                 li.sub-nav-item {
-                    width: 100%;
+                    width: 101.5%;
+                    margin: 0 0 0 -3px;
                     a {
                         @include font(#ffffff, 14px, 500, 20px);
                         opacity: 1;
