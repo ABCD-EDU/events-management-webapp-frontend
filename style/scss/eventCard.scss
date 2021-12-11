@@ -20,6 +20,7 @@ $accent-color: #EAAA1D;
 
 body {
     section#card {
+        margin: 0px 10px;
         padding: 50px 60px;
         max-width: 1144px;
         background-color: white;
@@ -41,7 +42,6 @@ body {
                 margin-bottom: 40px;
             }
         }
-
         div#footer {
             display: flex;
             justify-content: space-between;

@@ -2,298 +2,90 @@
 $montserrat: 'Montserrat', sans-serif;
 // R-400 | M-500 | SB-600 | B-700 | EB-800 | BLACK-900
 
-
-@mixin font($color, $size, $weight, $height) {
-    color: $color;
-    font-size: $size;
-    font-weight: $weight;
-    line-height: $height;
-}
-
-@mixin dimension($height, $width) {
-    height: $height;
-    width: $width;
-}
-
 * {
     font-family: 'Montserrat', sans-serif;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    user-select: none;
-    list-style: none;
-    text-decoration: none;
 }
 
-
-//710 width - breaking point for responsiveness
-#burger-icon {
-    position: absolute;
-    right: 25px;
-    top: 22px;
-    @include dimension(30px, 30px);
-    z-index: 999;
-    visibility: hidden;
-    &:hover {
-        box-shadow: 0 0 5px #33ffff,
-                    0 0 5px #66ffff;
-    }
-    &:hover + nav {
-        visibility: visible;
-    }
-}
-
-#main-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 1vw;
-    @include dimension(42px, 100%);
-
-    #event-links, #account-links {
+nav#main-nav {
+    padding: 20px 30px;
+    background-color: white;
+    ul#main-nav-links {
+        list-style: none;
         display: flex;
-        justify-content: space-between;
-        resize: none;
-    }
-
-    #event-links {
-        margin: 0 0 0 8px;
-        width: 225px;
-    }
-
-    #account-links {
-        width: 205px;
-    }
-
-    .main-nav-item {
-        a {
-            @include font(#000000, 13px, 600, 22px);
-            opacity: .5;
-        }
-        &:hover {
+        gap: 40px;
+        li.main-nav-item {
             a {
-                opacity: 1;
-            }
-        }
-    }
-
-    .nav-item-1 {
-        width: 130px;
-    }
-    .nav-item-2 {
-        width: 210px;
-        text-align: center;
-    }
-    .nav-item-3 {
-        width: 190px;
-        text-align: center;
-    }
-    .nav-item-4 {
-        width: 90px;
-        text-align: right;
-        padding: 0 8px 0 0;
-    }
-}
-
-nav#sub-nav {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 50px;
-    height: 20px;
-
-    #category-dropdown {
-        width: 154px;
-        background-color: #000000;
-        text-align: center;
-        visibility: hidden; 
-        a {
-            color: white;
-        }
-    }
-
-    ul#event-category {
-        margin: -35px 0 0 0;
-        padding: 0 0 0 4px;
-        width: 810px;
-        li.sub-nav-item {
-            margin: 0 16px 0 0;
-            display: inline;
-
-            a {
-                @include font(#000000, 11px, 700, 20px);
+                color: black;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 22px;
                 opacity: .5;
                 text-decoration: none;
-            }
-            &:active {
-                a {
+                &:hover {
                     opacity: 1;
                 }
             }
-        }
-        
-    }
-    
-    // ul#sort-dropdown {
-    //     user-select: none;
-    //     list-style: none;
-    //     li#label {
-    //         display: inline;
-    //         @include font(black, 16px, 500, 20px)
-    //     }
-
-    //     li#dropdown {
-    //         display: inline;
-    //         button {
-    //             background-color: transparent;
-    //             border: none;
-    //             @include font(black, 16px, 700, 20px);
-    //             cursor: pointer;
-    //         }
-    //     }
-    // }
-}
-
-@media only screen and (max-width: 860px){
-    #main-nav {
-        .main-nav-item {
-            a {
-                @include font(#000000, 13px, 600, 22px);
-                opacity: .5; 
+            &:nth-child(3) {
+                margin-left: auto;
             }
-            &:hover {
-                a {
-                    opacity: 1;
-                }
+            &:nth-child(4) a {
+                color: #FF3535;
             }
         }
-
     }
-    
-    nav#sub-nav {
-       width: 93vw;
-
-       ul#event-category {
-           width: auto;
-       }
-
+    div#burger-menu {
+        display: none;
+        cursor: pointer;
+        span.bar {
+            display: block;
+            background-color: black;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
     }
 }
 
-@media only screen and (max-width: 650px){
-    body{
-        width: 100vw;
-        #burger-icon {
-            visibility: visible;
-        }
-        #main-nav {
-            display: flex;
+@media only screen and (max-width: 840px) {
+    nav#main-nav {
+        ul#main-nav-links {
+            display: none;
+            gap: 0;
             flex-direction: column;
-            position: absolute;
-            background-color: #000000;
-            top: 0;
-            padding: 116px 0 0 0;
-            right: 0;
-            visibility: hidden;
-            @include dimension(165px, 200px);
-
-            &:hover{
-                visibility: visible;
+            li.main-nav-item {
+                margin: 15px auto;
+            }   
+            &.active {
+                display: flex;
             }
             
-            #event-links, #account-links {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                top: -40px;
-                margin: 0 0 0 1px;
-                @include dimension(50px, 200px);
-                &:hover {
-                    visibility: visible;
-                }
-            }
-            #event-links {
-            }
-
-            .main-nav-item {
-                width: 200px;
-                text-align: left;
-                a {
-                    display: block;
-                    @include font(#ffffff, 15px, 500, 20px);
-                    opacity: 1;
-                    padding: 0 0 0 10px;
-                    margin: 1px 0 0 0;
-                    &:hover {
-                        visibility: visible;
-                        box-shadow: 0 0 5px #33ffff,
-                                    0 0 5px #66ffff;
-                    }
-                }
-            }
-            .nav-item-4 {
-                padding: unset;
-            }
         }
-        
-        nav#sub-nav {
-            position: relative;
-            margin: 20px auto 0 auto;
-            left: 0;
-            width: 80vw;
-            #category-dropdown {
-                visibility: visible;
-                height: 20px;
-                margin: -1px 0 0 0;
 
-                &:hover + ul {
-                    visibility: visible;
+        div#burger-menu {
+            display: block;
+            &.active {
+                margin-top: 10px;
+                margin-bottom: 20px;
+                .bar:nth-child(2) {
+                    opacity: 0;
                 }
-
-                a {
-                    font-size: 2vw;
-                    letter-spacing: 2px;
-                    font-weight: 500;
-                }
-                
             }
-            
-            ul#event-category {
-                position: absolute;
-                top: 54px;
-                background-color: #000000;
-                display: flex;
-                flex-direction: column;
-                width: 154px;
-                visibility: hidden;
-                &:hover {
-                    visibility: visible;
+            &.active {
+                .bar:nth-child(1) {
+                    transform: translateY(8px) rotate(45deg);
                 }
-                li.sub-nav-item {
-                    width: 101.5%;
-                    margin: 0 0 0 -3px;
-                    a {
-                        @include font(#ffffff, 14px, 500, 20px);
-                        opacity: 1;
-                        text-decoration: none;
-                        padding: 0 0 0 7px;
-                        display: block;
-                        &:hover {
-                            box-shadow: 0 0 5px #33ffff,
-                                        0 0 5px #66ffff;
-                                        
-                        }
-                    }
-                    
-                }
-                
             }
-            
-            
+            &.active {
+                .bar:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+            }
         }
     }
-    
-
 }

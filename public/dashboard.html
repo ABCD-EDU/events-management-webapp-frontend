@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/css/dashboard.css">
     <link rel="stylesheet" href="/style/css/nav.css">
+    <script src="/public/dashboard.js"></script>
     <title>Page Title</title>
 </head>
 <body>
     <header>
         <nav id="main-nav">
+            <div id="burger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
             <ul id="main-nav-links">
                 <li class="main-nav-item"><a href="">My Events</a></li>
                 <li class="main-nav-item"><a href="">Upcoming Events</a></li>
-                <li class="main-nav-item"><a href="">Create an Event</a></li>
+                <li class="main-nav-item"><a href="/public/editCreateEvents.html">Create an Event</a></li>
                 <li class="main-nav-item"><a href="">Logout</a></li>
-                <button img></button>
             </ul>
         </nav>
     </header>
-
     <div id="page-title">Page Title</div>
-
     <section id="main">
         <div id="search-bar">
             <input type="text" id="search-field" name="search" placeholder="Search event">
@@ -52,7 +55,7 @@
         </nav>
         <hr id="divider">
         <section id="events">
-
+            <!-- insert events here -->
         </section>
     </section>
 </body>
