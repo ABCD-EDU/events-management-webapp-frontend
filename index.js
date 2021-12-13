@@ -56,6 +56,7 @@ const getUserEvents = () => {
           subNav.innerHTML = "";
           for (var i = 0; i < _items.length; i++) {
             const {
+              event_id,
               event_name,
               address,
               date_start,
@@ -65,7 +66,7 @@ const getUserEvents = () => {
               category,
             } = _items[i];
             subNav.innerHTML += `
-      <section id="card">
+      <section class="card">
           <div id="info">
               <h2 id="event-name">${event_name}</h2>
               <h3 id="address">${address}</h3>
@@ -76,8 +77,7 @@ const getUserEvents = () => {
           <div id="footer">
               <h3 id="status">STATUS: ${event_status}</h3>
               <div id="buttons">
-                  <button id="join">JOIN</button>
-                  <button id="leave">LEAVE</button>
+              <button onclick="leaveEvent(this.id)" id=${event_id} class="join">LEAVE</button>
               </div>
           </div>
       </section>
@@ -99,6 +99,7 @@ const getUpcomingEvents = () => {
           subNav.innerHTML = "";
           for (var i = 0; i < _items.length; i++) {
             const {
+              event_id,
               event_name,
               address,
               date_start,
@@ -108,8 +109,8 @@ const getUpcomingEvents = () => {
               category,
             } = _items[i];
             subNav.innerHTML += `
-      <section id="card">
-          <div id="info">
+            <section class="card">
+            <div id="info">
               <h2 id="event-name">${event_name}</h2>
               <h3 id="address">${address}</h3>
               <h3 id="date">Starting Date: ${date_start}</h3>
@@ -119,8 +120,7 @@ const getUpcomingEvents = () => {
           <div id="footer">
               <h3 id="status">STATUS: ${event_status}</h3>
               <div id="buttons">
-                  <button id="join">JOIN</button>
-                  <button id="leave">LEAVE</button>
+              <button onclick="joinEvent(this.id)" id=${event_id} class="join">JOIN</button>
               </div>
           </div>
       </section>

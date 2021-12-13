@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-body section#card {
+body section.card {
   margin: 0px 10px;
   padding: 50px 60px;
   max-width: 1144px;
@@ -15,7 +15,7 @@ body section#card {
   border: black 2px solid;
 }
 
-body section#card div#info h2 {
+body section.card div#info h2 {
   color: black;
   font-size: 26px;
   font-weight: 700;
@@ -23,7 +23,7 @@ body section#card div#info h2 {
   margin-bottom: 10px;
 }
 
-body section#card div#info h3 {
+body section.card div#info h3 {
   color: black;
   font-size: 18px;
   font-weight: 600;
@@ -31,11 +31,11 @@ body section#card div#info h3 {
   margin-bottom: 10px;
 }
 
-body section#card div#info h3#time {
+body section.card div#info h3#time {
   margin-bottom: 30px;
 }
 
-body section#card div#info p {
+body section.card div#info p {
   color: black;
   font-size: 18px;
   font-weight: 400;
@@ -43,7 +43,7 @@ body section#card div#info p {
   margin-bottom: 40px;
 }
 
-body section#card div#footer {
+body section.card div#footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,7 +52,7 @@ body section#card div#footer {
           justify-content: space-between;
 }
 
-body section#card div#footer div#buttons {
+body section.card div#footer div#buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,7 +60,7 @@ body section#card div#footer div#buttons {
           column-gap: 20px;
 }
 
-body section#card div#footer div#buttons button {
+body section.card div#footer div#buttons button {
   color: black;
   font-size: 18px;
   font-weight: 700;
@@ -70,6 +70,6 @@ body section#card div#footer div#buttons button {
   cursor: pointer;
 }
 
-body section#card div#footer div#buttons button:active {
+body section.card div#footer div#buttons button:active {
   color: #DDDDDD;
 }
