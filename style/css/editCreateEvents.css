@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
@@ -17,11 +17,11 @@ body div#page-title {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: black;
   color: white;
   font-size: 50px;
@@ -35,8 +35,8 @@ body section {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 body section form#create-edit-events {
@@ -45,12 +45,18 @@ body section form#create-edit-events {
   display: grid;
   row-gap: 30px;
   -webkit-column-gap: 20px;
-          column-gap: 20px;
+  column-gap: 20px;
   -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 4fr .5fr .1fr;
-      grid-template-rows: 1fr 1fr 1fr 4fr .5fr .1fr;
-      grid-template-areas: "name name name" "location location status" "date time category" "description description description" "submit submit submit" "discard discard discard";
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 4fr 0.5fr 0.1fr;
+  grid-template-rows: 1fr 1fr 1fr 4fr 0.5fr 0.1fr;
+  grid-template-areas:
+    "name name name"
+    "location location status"
+    "date time category"
+    "description description description"
+    "submit submit submit"
+    "discard discard discard";
 }
 
 body section form#create-edit-events div {
@@ -65,7 +71,9 @@ body section form#create-edit-events label {
   line-height: 22px;
 }
 
-body section form#create-edit-events input, body section form#create-edit-events textarea, body section form#create-edit-events select {
+body section form#create-edit-events input,
+body section form#create-edit-events textarea,
+body section form#create-edit-events select {
   margin-top: 10px;
   height: 50px;
   border: 2px solid black;
@@ -76,24 +84,32 @@ body section form#create-edit-events input, body section form#create-edit-events
   text-indent: 15px;
 }
 
-body section form#create-edit-events input#desc-field, body section form#create-edit-events textarea#desc-field, body section form#create-edit-events select#desc-field {
+body section form#create-edit-events input#desc-field,
+body section form#create-edit-events textarea#desc-field,
+body section form#create-edit-events select#desc-field {
   padding: 15px;
   height: 300px;
   resize: none;
   text-indent: 0;
 }
 
-body section form#create-edit-events input.dropdown, body section form#create-edit-events textarea.dropdown, body section form#create-edit-events select.dropdown {
+body section form#create-edit-events input.dropdown,
+body section form#create-edit-events textarea.dropdown,
+body section form#create-edit-events select.dropdown {
   background-color: white;
   text-indent: 4px;
 }
 
-body section form#create-edit-events input.dropdown option, body section form#create-edit-events textarea.dropdown option, body section form#create-edit-events select.dropdown option {
+body section form#create-edit-events input.dropdown option,
+body section form#create-edit-events textarea.dropdown option,
+body section form#create-edit-events select.dropdown option {
   background-color: white;
 }
 
-body section form#create-edit-events input:focus, body section form#create-edit-events textarea:focus, body section form#create-edit-events select:focus {
-  border-color: #EAAA1D;
+body section form#create-edit-events input:focus,
+body section form#create-edit-events textarea:focus,
+body section form#create-edit-events select:focus {
+  border-color: #eaaa1d;
   outline: none;
 }
 
@@ -112,7 +128,7 @@ body section form#create-edit-events #submit-button {
 
 body section form#create-edit-events #submit-button:active {
   border: 2px solid black;
-  background-color: #DDDDDD;
+  background-color: #dddddd;
   color: black;
 }
 
@@ -131,7 +147,7 @@ body section form#create-edit-events #discard-button {
 }
 
 body section form#create-edit-events #discard-button:active {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 body section form#create-edit-events #name-block {
@@ -185,8 +201,8 @@ body section form#create-edit-events #submit-block {
   -ms-grid-column-span: 3;
   grid-area: submit;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 body section form#create-edit-events #discard-block {
@@ -195,6 +211,25 @@ body section form#create-edit-events #discard-block {
   -ms-grid-column-span: 3;
   grid-area: discard;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 860px) {
+  body section form#create-edit-events {
+    display: -ms-grid;
+    display: grid;
+    margin: 30px;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: 0.8fr 0.8fr 0.8fr 0.8fr 4fr 0.5fr 0.1fr;
+    grid-template-rows: 0.8fr 0.8fr 0.8fr 0.8fr 4fr 0.5fr 0.1fr;
+    grid-template-areas:
+      "name name"
+      "location location"
+      "status date"
+      "time category"
+      "description description"
+      "submit submit"
+      "discard discard";
+  }
 }
