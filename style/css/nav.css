@@ -31,6 +31,7 @@ nav#main-nav ul#main-nav-links li.main-nav-item a {
 
 nav#main-nav ul#main-nav-links li.main-nav-item a:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
 nav#main-nav ul#main-nav-links li.main-nav-item:nth-child(3) {
