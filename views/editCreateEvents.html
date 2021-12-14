@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/css/editCreateEvents.css">
     <link rel="stylesheet" href="/style/css/nav.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/helpers/dashboard.js" defer></script>
+    <script src="/script/createNewEvent.js" defer></script>
     <title>Page Title</title>
 </head>
 <body>
@@ -32,15 +34,15 @@
         <form action="" id="create-edit-events">
             <div id="name-block">
                 <label for="event-name">Event Name</label>
-                <input type="text" id="name-field" name="event-name" placeholder="Event Name" required>
+                <input type="text" id="name-field" name="name" placeholder="name" required>
             </div>
             <div id="location-block">
                 <label for="location">Location</label>
-                <input type="text" id="location-field" name="location" placeholder="Location" required>
+                <input type="text" id="location-field" name="address" placeholder="Location" required>
             </div>
             <div id="status-block">
                 <label for="status">Status</label>
-                <select name="status-field" id="status-option" class="dropdown">
+                <select name="status" id="status-option" class="dropdown">
                     <option value="0">Active</option>
                     <option value="2">Cancelled</option>
                 </select>
@@ -48,12 +50,12 @@
 
             <div id="date-start-block">
                 <label for="date">Date Start</label>
-                <input type="date" id="date-start-field" name="date" placeholder="Date" required>
+                <input type="date" id="date-start-field" name="dateStart" placeholder="Date" required>
             </div>
 
             <div id="date-end-block">
                 <label for="date">Date End</label>
-                <input type="date" id="date-end-field" name="date" placeholder="Date" required>
+                <input type="date" id="date-end-field" name="dateEnd" placeholder="Date" required>
             </div>
 
             <!-- <div id="time-block">
@@ -63,7 +65,7 @@
 
             <div id="category-block">
                 <label for="category">Event Category</label>
-                <select name="category-field" id="category-option" class="dropdown">
+                <select name="category" id="category-option" class="dropdown">
                     <option value="0">All</option>
                     <option value="1">Demonstrations</option>
                     <option value="2">Seminars</option>
@@ -74,7 +76,7 @@
             </div>
             <div id="description-block">
                 <label for="Description">Description</label>
-                <textarea id="desc-field" name="Description" placeholder="Description" required></textarea>
+                <textarea id="desc-field" name="description" placeholder="Description" required></textarea>
             </div>
             
             <div id="delete-submit-block">

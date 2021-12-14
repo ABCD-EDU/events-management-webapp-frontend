@@ -3,6 +3,7 @@ async function fetchAsync(url) {
     method: "GET",
   });
   let data = await response.json();
+  console.log("data: " + data)
   return data;
 }
 
@@ -116,12 +117,20 @@ const getUpcomingEvents = () => {
   });
 };
 
-const init = () => {
+
+$(() => {
   changeLogText();
   insertCreateEvent();
-  getUpcomingEvents();
-};
 
-document.body.onload = init;
-document.getElementById("upcoming-events").onclick = getUpcomingEvents;
-document.getElementById("my-events").onclick = getUserEvents;
+  // check whether user is logged in
+  getUserEvents();
+  
+  document.getElementById("upcoming-events").onclick = getUpcomingEvents;
+  document.getElementById("my-events").onclick = getUserEvents;
+
+  $("#create-event").click((e) => {
+    window.location.href = "views/editCreateEvents.html";
+  });
+
+});
+
