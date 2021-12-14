@@ -51,6 +51,9 @@ const getUserEvents = () => {
     .then((data) => {
       if (data.message) {
         fetchAsync("events/user-events").then((res) => {
+          $('#upcoming-events').css("opacity", "0.5");
+          $('#my-events').css("opacity", "1");
+      
           const _items = res;
           const subNav = document.getElementById("events");
           subNav.innerHTML = "";
@@ -66,7 +69,7 @@ const getUserEvents = () => {
               category,
             } = _items[i];
             subNav.innerHTML += `
-      <section class="card">
+      <section id=${event_name} class="card">
           <div id="info">
               <h2 id="event-name">${event_name}</h2>
               <h3 id="address">${address}</h3>
@@ -89,53 +92,54 @@ const getUserEvents = () => {
     .catch(console.log);
 };
 
+// TODO: WHEN LOADING THE CARD, CHECK FIRST IF THE USER HAS ALREADY
+// JOINED THE EVENT.
+// IF YES: REMOVE THE BUTTON
+// IF NO: BUTTON REMAINS
 const getUpcomingEvents = () => {
-  fetchAsync("session/isLogged")
-    .then((data) => {
-      if (data.message) {
-        fetchAsync("events/upcoming-events").then((res) => {
-          const _items = res;
-          const subNav = document.getElementById("events");
-          subNav.innerHTML = "";
-          for (var i = 0; i < _items.length; i++) {
-            const {
-              event_id,
-              event_name,
-              address,
-              date_start,
-              date_end,
-              description,
-              event_status,
-              category,
-            } = _items[i];
-            subNav.innerHTML += `
-            <section class="card">
-            <div id="info">
-              <h2 id="event-name">${event_name}</h2>
-              <h3 id="address">${address}</h3>
-              <h3 id="date">Starting Date: ${date_start}</h3>
-              <h3 id="time">Ending Date: ${date_end}</h3>
-              <p id="description">${description}</p>
-          </div>
-          <div id="footer">
-              <h3 id="status">STATUS: ${event_status}</h3>
-              <div id="buttons">
+  fetchAsync("events/upcoming-events").then((res) => {
+    $('#upcoming-events').css("opacity", "1");
+    $('#my-events').css("opacity", "0.5");
+
+    const _items = res;
+    const subNav = document.getElementById("events");
+    subNav.innerHTML = "";
+    for (var i = 0; i < _items.length; i++) {
+      const {
+        event_id,
+        event_name,
+        address,
+        date_start,
+        date_end,
+        description,
+        event_status,
+        category,
+      } = _items[i];
+      subNav.innerHTML += `
+      <section id=${event_name} class="card">
+        <div id="info">
+          <h2 id="event-name">${event_name}</h2>
+          <h3 id="address">${address}</h3>
+          <h3 id="date">Starting Date: ${date_start}</h3>
+          <h3 id="time">Ending Date: ${date_end}</h3>
+          <p id="description">${description}</p>
+        </div>
+        <div id="footer">
+            <h3 id="status">STATUS: ${event_status}</h3>
+            <div id="buttons">
               <button onclick="joinEvent(this.id)" id=${event_id} class="join">JOIN</button>
-              </div>
-          </div>
+            </div>
+        </div>
       </section>
-      `;
-          }
-        });
-      }
-    })
-    .catch(console.log);
+  `;
+    }
+  });
 };
 
 const init = () => {
   changeLogText();
   insertCreateEvent();
-  getUserEvents();
+  getUpcomingEvents();
 };
 
 document.body.onload = init;
