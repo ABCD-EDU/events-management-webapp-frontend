@@ -9,8 +9,9 @@ const attemptLogin = () => {
     if (data.message) {
       fetchAsync("session/logout").then((data) => {
         if (data.message) {
+            console.log(data)
           document.getElementById("log").innerText = "Login";
-          location.reload(true);
+        //   location.reload(true);
         }
       });
     } else {
