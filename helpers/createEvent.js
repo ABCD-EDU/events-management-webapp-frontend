@@ -1,5 +1,3 @@
-const e = require("express");
-
 const showCreateEvent = () => {
     fetch("session/userType", {method: "GET"})
     .then((res) => {

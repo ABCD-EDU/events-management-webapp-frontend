@@ -4,14 +4,12 @@
  * As of now it just changes the Logout text to Login
  */
 const attemptLogin = () => {
-  fetch("session/isLogged", {method: "POST"}).then((data) => {
-    console.log(data.message);
+  fetchAsync("session/isLogged").then((data) => {
     if (data.message) {
-      fetchAsync("session/logout").then((data) => {
-        if (data.message) {
-            console.log(data)
+      fetchAsync("session/logout").then((logout) => {
+        if (logout.message) {
           document.getElementById("log").innerText = "Login";
-        //   location.reload(true);
+          location.reload(true);
         }
       });
     } else {
