@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/css/editCreateEvents.css">
     <link rel="stylesheet" href="/style/css/nav.css">
+    <script src="/helpers/dashboard.js" defer></script>
     <title>Page Title</title>
 </head>
 <body>
     <header>
         <nav id="main-nav">
-            <ul id="event-links">
-                <li class="main-nav-item"><a href="">My Events</a></li>
-                <li class="main-nav-item"><a href="">Upcoming Events</a></li>
-            </ul>
-            <ul id="account-links">
-                <li class="main-nav-item"><a href="">Create an Event</a></li>
-                <li class="main-nav-item"><a href="">Logout</a></li>
+            <div id="burger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul id="main-nav-links">
+                <li class="main-nav-item"><a id="my-events">My Events</a></li>
+                <li class="main-nav-item"><a id="upcoming-events">Upcoming Events</a></li>
+                <li class="main-nav-item"><a id="create-event">Create an Event</a></li>
+                <li class="main-nav-item"><a id="log">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -38,18 +42,25 @@
                 <label for="status">Status</label>
                 <select name="status-field" id="status-option" class="dropdown">
                     <option value="0">Active</option>
-                    <option value="1">Finished</option>
                     <option value="2">Cancelled</option>
                 </select>
             </div>
-            <div id="date-block">
-                <label for="date">Date</label>
-                <input type="date" id="date-field" name="date" placeholder="Date" required>
+
+            <div id="date-start-block">
+                <label for="date">Date Start</label>
+                <input type="date" id="date-start-field" name="date" placeholder="Date" required>
             </div>
-            <div id="time-block">
+
+            <div id="date-end-block">
+                <label for="date">Date End</label>
+                <input type="date" id="date-end-field" name="date" placeholder="Date" required>
+            </div>
+
+            <!-- <div id="time-block">
                 <label for="time">Time</label>
                 <input type="time" id="time-field" name="time" placeholder="Time" required>
-            </div>
+            </div> -->
+
             <div id="category-block">
                 <label for="category">Event Category</label>
                 <select name="category-field" id="category-option" class="dropdown">
@@ -65,19 +76,14 @@
                 <label for="Description">Description</label>
                 <textarea id="desc-field" name="Description" placeholder="Description" required></textarea>
             </div>
-
-            <div id="submit-block">
+            
+            <div id="delete-submit-block">
+                <input type="submit" value="DELETE EVENT" id="delete-button">
                 <input type="submit" value="SUBMIT EVENT" id="submit-button">
             </div>
             <div id="discard-block">
                 <input type="submit" value="discard changes" id="discard-button">
             </div>
-            <!-- <div id="delete-block">
-                <input type="submit" value="DELETE EVENT" id="delete-button">
-            </div>
-            <div id="save-block">
-                <input type="submit" value="SAVE CHANGES" id="save-button">
-            </div> -->
         </form>
     </section>
 </body>
