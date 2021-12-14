@@ -26,26 +26,6 @@ const insertCreateEvent = () => {
   });
 };
 
-/**
- * TODO: Consider adding a toast when user has logged out successfully
- *
- * As of now it just changes the Logout text to Login
- */
-const attemptLogin = () => {
-  fetchAsync("session/isLogged").then((data) => {
-    console.log(data.message);
-    if (data.message) {
-      fetchAsync("session/logout").then((data) => {
-        if (data.message) {
-          document.getElementById("log").innerText = "Login";
-        }
-      });
-    } else {
-      window.location.href = "session/login";
-    }
-  });
-};
-
 const getUserEvents = () => {
   fetchAsync("session/isLogged")
     .then((data) => {
@@ -143,6 +123,5 @@ const init = () => {
 };
 
 document.body.onload = init;
-document.getElementById("log").onclick = attemptLogin;
 document.getElementById("upcoming-events").onclick = getUpcomingEvents;
 document.getElementById("my-events").onclick = getUserEvents;
