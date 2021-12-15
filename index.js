@@ -156,5 +156,5 @@ $(async () => {
 
   document.getElementById("upcoming-events").onclick = getUpcomingEvents;
   document.getElementById("my-events").onclick = getUserEvents;
-  $("#create-event").click((e) => { window.location.href = "views/editCreateEvents.html"; });
+  $("#create-event").click((e) => { window.location.href = "views/createEvents.html"; });
 });

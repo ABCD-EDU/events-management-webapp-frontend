@@ -39,5 +39,16 @@ const leaveEvent = (event_id) => {
 };
 
 const editEvent = (event_id) => {
-  alert(event_id);
+  $.ajax({
+    url: '/events/set_event_id/',
+    type: 'post',
+    dataType: 'json',
+    contentType: 'application/json',
+    success: function (data) {
+      window.location.href = "views/editEvents.html"
+    },
+    data: JSON.stringify({
+      "id": event_id
+    })
+  });
 }
