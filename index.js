@@ -1,30 +1,27 @@
+let userType = null;
+let isLogged = null;
+
 async function fetchAsync(url) {
   let response = await fetch(url, {
     method: "GET",
   });
   let data = await response.json();
-  console.log("data: " + data);
+  // console.log("data: " + data);
   return data;
 }
 
-const changeLogText = () => {
-  fetchAsync("session/isLogged").then((data) => {
-    if (data.message) {
-      document.getElementById("log").innerText = "Logout";
-    } else {
-      console.log(data);
-      document.getElementById("log").innerText = "Login";
-    }
-  });
-};
-
-const insertCreateEvent = () => {
-  fetchAsync("session/userType").then((data) => {
-    const type = data.type;
-    if (type === "member") {
-      document.getElementById("create-event").style.display = "none";
-    }
-  });
+const intializeElements = () => {
+  // hide/show create-event button
+  if (userType === "member") {
+    document.getElementById("create-event").style.display = "none";
+  }
+  // set log text
+  if (isLogged) {
+    document.getElementById("log").innerText = "Logout";
+  } else {
+    document.getElementById("log").innerText = "Login";
+  }
+  // set
 };
 
 const getUserEvents = () => {
@@ -61,7 +58,9 @@ const getUserEvents = () => {
           <div id="footer">
               <h3 id="status">STATUS: ${event_status}</h3>
               <div id="buttons">
-              <button onclick="leaveEvent(this.id)" id=${event_id} class="join">LEAVE</button>
+              <button onclick="${userType === "admin" ? "editEvent(this.id)" : "leaveEvent(this.id)"}" 
+              id=${event_id} 
+              class="join">${userType === "admin" ? "EDIT EVENT" : "LEAVE"}</button>
               </div>
           </div>
       </section>
@@ -110,9 +109,9 @@ const getUpcomingEvents = () => {
             <h3 id="status">STATUS: ${event_status}</h3>
             <div id="buttons">
               <button 
-              onclick=${hasJoined ? "leaveEvent(" + event_id + ")" : "joinEvent(" + event_id + ")"}
+              onclick=${determineButtonOnClick(hasJoined, event_id, userType)}
               id=${event_id} 
-              class="join">${hasJoined ? "LEAVE" : "JOIN"}
+              class="join">${determineButtonName(hasJoined, event_id, userType)}
               </button>
             </div>
         </div>
@@ -122,17 +121,40 @@ const getUpcomingEvents = () => {
   });
 };
 
-$(() => {
-  changeLogText();
-  insertCreateEvent();
+const determineButtonOnClick = (hasJoined, event_id, userType) => {
+  if (userType === "admin") {
+    return "editEvent(" + event_id + ")";
+  }else if (userType === "member") {
+    return hasJoined ? "leaveEvent(" + event_id + ")" : "joinEvent(" + event_id + ")";
+  }else {
+    return "attemptLogin()";
+  }
+}
 
-  // check whether user is logged in
+const determineButtonName = (hasJoined, event_id, userType) => {
+  if (userType === "admin") {
+    return "EDIT EVENT";
+  } else {
+    return hasJoined ? "LEAVE" : "JOIN";
+  }
+}
+
+async function initalizeVariables() {
+  let response = await fetch("session/userType", {method: "GET"});
+  let data = await response.json();
+  userType = data.type;
+  
+  response = await fetch("session/isLogged", { method: "GET" });
+  data = await response.json();
+  isLogged = data.message;
+}
+
+$(async () => {
+  await initalizeVariables();
+  intializeElements();
   getUpcomingEvents();
 
   document.getElementById("upcoming-events").onclick = getUpcomingEvents;
   document.getElementById("my-events").onclick = getUserEvents;
-
-  $("#create-event").click((e) => {
-    window.location.href = "views/editCreateEvents.html";
-  });
+  $("#create-event").click((e) => { window.location.href = "views/editCreateEvents.html"; });
 });

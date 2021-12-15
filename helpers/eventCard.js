@@ -37,3 +37,7 @@ const leaveEvent = (event_id) => {
     element.parentNode.parentNode.parentNode.style.display = "none";
   });
 };
+
+const editEvent = (event_id) => {
+  alert(event_id);
+}
