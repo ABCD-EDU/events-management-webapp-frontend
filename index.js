@@ -3,7 +3,7 @@ async function fetchAsync(url) {
     method: "GET",
   });
   let data = await response.json();
-  console.log("data: " + data)
+  console.log("data: " + data);
   return data;
 }
 
@@ -32,9 +32,9 @@ const getUserEvents = () => {
     .then((data) => {
       if (data.message) {
         fetchAsync("events/user-events").then((res) => {
-          $('#upcoming-events').css("opacity", "0.5");
-          $('#my-events').css("opacity", "1");
-      
+          $("#upcoming-events").css("opacity", "0.5");
+          $("#my-events").css("opacity", "1");
+
           const _items = res;
           const subNav = document.getElementById("events");
           subNav.innerHTML = "";
@@ -79,8 +79,8 @@ const getUserEvents = () => {
 // IF NO: BUTTON REMAINS
 const getUpcomingEvents = () => {
   fetchAsync("events/upcoming-events").then((res) => {
-    $('#upcoming-events').css("opacity", "1");
-    $('#my-events').css("opacity", "0.5");
+    $("#upcoming-events").css("opacity", "1");
+    $("#my-events").css("opacity", "0.5");
 
     const _items = res;
     const subNav = document.getElementById("events");
@@ -95,6 +95,7 @@ const getUpcomingEvents = () => {
         description,
         event_status,
         category,
+        hasJoined,
       } = _items[i];
       subNav.innerHTML += `
       <section id=${event_name} class="card">
@@ -108,7 +109,11 @@ const getUpcomingEvents = () => {
         <div id="footer">
             <h3 id="status">STATUS: ${event_status}</h3>
             <div id="buttons">
-              <button onclick="joinEvent(this.id)" id=${event_id} class="join">JOIN</button>
+              <button 
+              onclick=${hasJoined ? "leaveEvent(" + event_id + ")" : "joinEvent(" + event_id + ")"}
+              id=${event_id} 
+              class="join">${hasJoined ? "LEAVE" : "JOIN"}
+              </button>
             </div>
         </div>
       </section>
@@ -117,20 +122,17 @@ const getUpcomingEvents = () => {
   });
 };
 
-
 $(() => {
   changeLogText();
   insertCreateEvent();
 
   // check whether user is logged in
   getUserEvents();
-  
+
   document.getElementById("upcoming-events").onclick = getUpcomingEvents;
   document.getElementById("my-events").onclick = getUserEvents;
 
   $("#create-event").click((e) => {
     window.location.href = "views/editCreateEvents.html";
   });
-
 });
-
