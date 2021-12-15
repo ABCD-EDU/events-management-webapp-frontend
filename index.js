@@ -127,7 +127,7 @@ $(() => {
   insertCreateEvent();
 
   // check whether user is logged in
-  getUserEvents();
+  getUpcomingEvents();
 
   document.getElementById("upcoming-events").onclick = getUpcomingEvents;
   document.getElementById("my-events").onclick = getUserEvents;

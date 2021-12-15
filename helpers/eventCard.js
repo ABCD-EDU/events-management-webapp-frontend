@@ -1,4 +1,10 @@
 const joinEvent = (event_id) => {
+  fetch("session/isLogged")
+  .then((data) => {
+    if (!data.message) {
+      window.location.href = "session/login";
+    }
+  })
   let data = {
     event_id: event_id,
   };
