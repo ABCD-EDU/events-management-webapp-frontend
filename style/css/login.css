@@ -106,10 +106,9 @@ body section #return-button {
   font-size: 18px;
   font-weight: 500;
   line-height: 20px;
-  opacity: .5;
   cursor: pointer;
 }
 
-body section #return-button:hover {
-  opacity: 1;
+body section #return-button:active {
+  opacity: .5;
 }

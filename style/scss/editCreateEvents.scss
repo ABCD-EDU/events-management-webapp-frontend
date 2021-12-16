@@ -62,13 +62,6 @@ body {
                     resize: none;
                     text-indent: 0;
                 }
-                &#status-option {
-                    // status-option is disabled when creating an event
-                    // new events should always be "active"
-                    // Opacity .5 = DISABLE INDICATOR 
-                    opacity: .5;
-                    pointer-events: none;
-                }
                 &.dropdown {
                     background-color: white;
                     text-indent: 4px;

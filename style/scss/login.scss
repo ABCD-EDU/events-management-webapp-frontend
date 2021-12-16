@@ -75,10 +75,9 @@ body {
             background-color: transparent;
             border: none;
             @include font(black, 18px, 500, 20px);
-            opacity: .5;
             cursor: pointer;
-            &:hover {
-                opacity: 1;
+            &:active {
+                opacity: .5;
             }
         }
     }

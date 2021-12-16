@@ -43,12 +43,7 @@ body section form#create-edit-events {
       grid-template-columns: 1fr 1fr 1fr;
   -ms-grid-rows: 1fr 1fr 1fr 4fr .5fr .1fr;
       grid-template-rows: 1fr 1fr 1fr 4fr .5fr .1fr;
-      grid-template-areas: "name name name"
- "location location status"
- "dateStart dateEnd category"
- "description description description"
- "delSub delSub delSub"
- "discard discard discard";
+      grid-template-areas: "name name name" "location location status" "dateStart dateEnd category" "description description description" "delSub delSub delSub" "discard discard discard";
 }
 
 body section form#create-edit-events div {
@@ -83,11 +78,6 @@ body section form#create-edit-events input#desc-field, body section form#create-
   height: 300px;
   resize: none;
   text-indent: 0;
-}
-
-body section form#create-edit-events input#status-option, body section form#create-edit-events textarea#status-option, body section form#create-edit-events select#status-option {
-  opacity: .5;
-  pointer-events: none;
 }
 
 body section form#create-edit-events input.dropdown, body section form#create-edit-events textarea.dropdown, body section form#create-edit-events select.dropdown {
@@ -222,13 +212,7 @@ body section form#create-edit-events #discard-block {
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: 0.8fr 0.8fr 0.8fr 0.8fr 4fr 0.5fr 0.1fr;
         grid-template-rows: 0.8fr 0.8fr 0.8fr 0.8fr 4fr 0.5fr 0.1fr;
-        grid-template-areas: "name name"
- "location location"
- "category status"
- "dateStart dateEnd"
- "description description"
- "delSub delSub"
- "discard discard";
+        grid-template-areas: "name name" "location location" "category status" "dateStart dateEnd" "description description" "delSub delSub" "discard discard";
   }
   body section form#create-edit-events #delete-button, body section form#create-edit-events #submit-button {
     width: 200px;
