@@ -7,6 +7,7 @@ const toSend = {
 $ (() => {
     
     initializeButtons();
+    $("#page-title").css("background-color", "#476A6F");
 
 });
 

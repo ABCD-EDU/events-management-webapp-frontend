@@ -14,6 +14,8 @@ const intializeElements = () => {
   // hide/show create-event button
   if (userType !== "admin") {
     document.getElementById("create-event").style.display = "none";
+  }else {
+    $("#page-title").css("background-color", "#476A6F");
   }
   // set log text
   if (isLogged) {
@@ -21,13 +23,15 @@ const intializeElements = () => {
   } else {
     document.getElementById("log").innerText = "Login";
   }
-  // set
+  // set title
+  document.getElementById("page-title").innerText = "Upcoming Events";
 };
 
 const getUserEvents = () => {
   fetchAsync("session/isLogged")
-    .then((data) => {
-      if (data.message) {
+  .then((data) => {
+    if (data.message) {
+        document.getElementById("page-title").innerText = "My Events";
         fetchAsync("events/user-events").then((res) => {
           $("#upcoming-events").css("opacity", "0.5");
           $("#my-events").css("opacity", "1");
@@ -78,6 +82,7 @@ const getUserEvents = () => {
 // IF YES: REMOVE THE BUTTON
 // IF NO: BUTTON REMAINS
 const getUpcomingEvents = () => {
+  document.getElementById("page-title").innerText = "Upcoming Events";
   fetchAsync("events/upcoming-events").then((res) => {
     $("#upcoming-events").css("opacity", "1");
     $("#my-events").css("opacity", "0.5");

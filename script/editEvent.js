@@ -6,6 +6,7 @@ let toChangeData = new Set();
 let data = null; // event data
 
 $(async () => {
+    $("#page-title").css("background-color", "#476A6F");
     initializeButtons();
     let response = await fetch("../events/event_data", { method: "GET" });
     data = await response.json();
