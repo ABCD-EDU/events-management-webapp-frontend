@@ -12,7 +12,7 @@ async function fetchAsync(url) {
 
 const intializeElements = () => {
   // hide/show create-event button
-  if (userType === "member") {
+  if (userType !== "admin") {
     document.getElementById("create-event").style.display = "none";
   }
   // set log text
