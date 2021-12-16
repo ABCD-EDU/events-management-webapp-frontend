@@ -19,7 +19,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 5%;
 }
 
 body section h1#title {
@@ -31,8 +30,13 @@ body section h1#title {
 }
 
 body section form#login {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -91,4 +95,21 @@ body section form#login #submit-button {
 body section form#login #submit-button:active {
   background-color: white;
   color: black;
+}
+
+body section #return-button {
+  margin: 40px auto 0px auto;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  opacity: .5;
+  cursor: pointer;
+}
+
+body section #return-button:hover {
+  opacity: 1;
 }

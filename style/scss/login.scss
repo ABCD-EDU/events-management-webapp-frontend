@@ -23,14 +23,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 5%;
     section {
         h1#title {
             text-align: center;
             @include font(black, 50px, 700, 61px);  
         }
         form#login {
-            display: grid;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             #user-label{
                 margin-top: 40px;
@@ -67,6 +67,18 @@ body {
                     background-color: white;
                     color: black;
                 }
+            }
+        }
+        #return-button {
+            margin: 40px auto 0px auto;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            @include font(black, 18px, 500, 20px);
+            opacity: .5;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
             }
         }
     }
