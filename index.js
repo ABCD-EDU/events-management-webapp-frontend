@@ -31,6 +31,7 @@ const getUserEvents = () => {
         fetchAsync("events/user-events").then((res) => {
           $("#upcoming-events").css("opacity", "0.5");
           $("#my-events").css("opacity", "1");
+          $("#page-title").innerHTML = "My Events";
 
           const _items = res;
           const subNav = document.getElementById("events");
@@ -80,6 +81,7 @@ const getUpcomingEvents = () => {
   fetchAsync("events/upcoming-events").then((res) => {
     $("#upcoming-events").css("opacity", "1");
     $("#my-events").css("opacity", "0.5");
+    $("#page-title").innerHTML = "Upcoming Events";
 
     const _items = res;
     const subNav = document.getElementById("events");

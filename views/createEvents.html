@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/style/css/editCreateEvents.css">
     <link rel="stylesheet" href="/style/css/nav.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/helpers/dashboard.js" defer></script>
+    <script src="/helpers/nav.js" defer></script>
     <script src="/script/createNewEvent.js" defer></script>
-    <title>Page Title</title>
+    <title>Create an Event</title>
 </head>
 <body>
     <header>
@@ -28,7 +28,7 @@
         </nav>
     </header>
 
-    <div id="page-title">Page Title</div>
+    <div id="page-title">Create an Event</div>
 
     <section>
         <form action="" id="create-edit-events">
@@ -47,22 +47,14 @@
                     <option value="2">Cancelled</option>
                 </select>
             </div>
-
             <div id="date-start-block">
                 <label for="date">Date Start</label>
                 <input type="date" id="date-start-field" name="dateStart" placeholder="Date" required>
             </div>
-
             <div id="date-end-block">
                 <label for="date">Date End</label>
                 <input type="date" id="date-end-field" name="dateEnd" placeholder="Date" required>
             </div>
-
-            <!-- <div id="time-block">
-                <label for="time">Time</label>
-                <input type="time" id="time-field" name="time" placeholder="Time" required>
-            </div> -->
-
             <div id="category-block">
                 <label for="category">Event Category</label>
                 <select name="category" id="category-option" class="dropdown">
@@ -80,7 +72,7 @@
             </div>
             
             <div id="delete-submit-block">
-                <input type="submit" value="SUBMIT EVENT" id="submit-button">
+                <input type="submit" value="CREATE EVENT" id="submit-button">
             </div>
             <div id="discard-block">
                 <input type="submit" value="discard changes" id="discard-button">
