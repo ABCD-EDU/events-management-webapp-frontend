@@ -6,19 +6,30 @@ let toChangeData = new Set();
 let data = null; // event data
 
 $(async () => {
+    initializeButtons();
     let response = await fetch("../events/event_data", { method: "GET" });
     data = await response.json();
     data = data[0];
     console.log(data);
     setOnChange();
     setFields();
+});
+
+function initializeButtons() {
     $("#submit-button").click((e) => {
         generateData();
         console.log(toSend);
         editEvent(toSend);
         e.preventDefault();
     });
-});
+    $("#discard-button, #my-events, #upcoming-events").click((e) => {
+        $.get("/events/discardEdit/");
+        window.location.href = "/";
+        e.preventDefault();
+    });
+    $("#create-event").hide();
+    $("#log").hide();
+}
 
 function generateData() {
     let body = {

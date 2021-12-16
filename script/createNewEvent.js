@@ -6,14 +6,28 @@ const toSend = {
 
 $ (() => {
     
+    initializeButtons();
+
+});
+
+function initializeButtons() {
     $("#submit-button").click((e) => {
         generateData();
         console.log(toSend);
         createEvent(toSend);
         e.preventDefault(); 
     });
-
-});
+    $("#discard-button, #my-events, #upcoming-events").click((e) => {
+        $.get("/events/discardEdit/");
+        window.location.href = "/";
+        e.preventDefault();
+    });
+    $("#create-event").hide();
+    $("#log").hide();
+    $('#status-option').prop('disabled', true);
+    $('#status-option').css('opacity', .5);
+    $('#status-option').css('cursor', "default");
+}
 
 function generateData() {
     let data = {}
