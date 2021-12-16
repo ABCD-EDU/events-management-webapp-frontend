@@ -22,6 +22,10 @@ function initializeButtons() {
         editEvent(toSend);
         e.preventDefault();
     });
+    $("#delete-button").click((e) => {
+        deleteEvent();
+        e.preventDefault();
+    });
     $("#discard-button, #my-events, #upcoming-events").click((e) => {
         $.get("/events/discardEdit/");
         window.location.href = "/";
@@ -104,5 +108,26 @@ function editEvent(toSend) {
             // alert(JSON.parse(data))
         },
         data: JSON.stringify(toSend)
+    });
+}
+
+function deleteEvent() {
+    const deleteData = {
+        action: "REMOVE_EVENT",
+        data: {
+            eventID: data["event_id"]
+        }
+    };
+    $.ajax({
+        url: '/events/edit/',
+        type: 'post',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function (data) {
+            alert("event deleted");
+            window.location.href = "/";
+            // alert(JSON.parse(data))
+        },
+        data: JSON.stringify(deleteData)
     });
 }
