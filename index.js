@@ -51,13 +51,15 @@ const getUserEvents = () => {
               event_status,
               category,
             } = _items[i];
+            let dateStart = date_start.split("T")[0];
+            let dateEnd = date_end.split("T")[0];
             subNav.innerHTML += `
       <section id=${event_name} class="card">
           <div id="info">
               <h2 id="event-name">${event_name}</h2>
               <h3 id="address">${address}</h3>
-              <h3 id="date">Starting Date: ${date_start}</h3>
-              <h3 id="time">Ending Date: ${date_end}</h3>
+              <h3 id="date">Starting Date: ${dateStart}</h3>
+              <h3 id="time">Ending Date: ${dateEnd}</h3>
               <p id="description">${description}</p>
           </div>
           <div id="footer">
@@ -103,13 +105,15 @@ const getUpcomingEvents = () => {
         category,
         hasJoined,
       } = _items[i];
+      let dateStart = date_start.split("T")[0];
+      let dateEnd = date_end.split("T")[0];
       subNav.innerHTML += `
       <section id=${event_name} class="card">
         <div id="info">
           <h2 id="event-name">${event_name}</h2>
           <h3 id="address">${address}</h3>
-          <h3 id="date">Starting Date: ${date_start}</h3>
-          <h3 id="time">Ending Date: ${date_end}</h3>
+          <h3 id="date">Starting Date: ${dateStart}</h3>
+          <h3 id="time">Ending Date: ${dateEnd}</h3>
           <p id="description">${description}</p>
         </div>
         <div id="footer">
